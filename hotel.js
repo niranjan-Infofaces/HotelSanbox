@@ -15,7 +15,7 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
   //  var menu = "idli"   
-   var menu = ["idli","dosa","vada"] ;
+   var menu "idli, vada, dosa"
   var speech =  req.body.result && req.body.result.parameters && req.body.result.parameters.Menu ? menu  : "Seems like some problem. Speak again.";
   return res.json({
     speech: speech,

@@ -1,4 +1,4 @@
-// You can find your project ID in your Dialogflow agent settings
+// You can find your project ID in your Dialogflow agent settings DN
 const projectId = 'ENTER_PROJECT_ID_HERE'; //https://dialogflow.com/docs/agents#settings
 const sessionId = 'quickstart-session-id';
 const query = 'hello';

@@ -16,7 +16,7 @@ restService.use(bodyParser.json());
 restService.post("/echo", function(req, res) {
   //  var menu = "idli"   
    var menu = "idli, vada, dosa"
-   input[0].rawInputs[0].query
+   //input[0].rawInputs[0].query
   //var speech =  req.body.result && req.body.result.parameters && req.body.result.parameters.Menu ? menu  : "Seems like some problem. Speak again.";
   var speech =  req.input[0].rawInputs[0].query ? menu  : "you are connected to webhook.";
   return res.json({

@@ -1,14 +1,16 @@
 {
-  "name": "GoogleHome_InfofacesSanbox",
+  "name": "webhook-echo-sample",
   "version": "1.0.0",
-  "description": "GoogleHome_InfofacesSanbox",
-  "main": "hotel.js",
+  "description": "Webhook echo sample",
+  "main": "index.js",
   "scripts": {
-    "start": "node hotel.js"
+    "start": "node index.js"
   },
-  "author": "Niranjan",
+  "author": "Sunil Syal",
   "dependencies": {
-    "body-parser": "^1.15.0",
-    "express": "^4.13.4"
+    "actions-on-google": "^1.8.1",
+    "body-parser": "^1.18.2",
+    "dialogflow": "^0.1.0",
+    "express": "^4.16.2"
   }
 }

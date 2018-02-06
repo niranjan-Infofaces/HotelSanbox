@@ -55,12 +55,12 @@ let actionMap = new Map();
 
 
 restService.use(bodyParser.json());
-/*
+ 
 restService.post('/', function (req, res) {
  // console.log(req.body);
   sillyNameMaker(req, res);
 })
-*/
+ 
 restService.post("/echo", function(req, res) {
   //  var menu = "idli"   
    var menu = "idli, vada, dosa"

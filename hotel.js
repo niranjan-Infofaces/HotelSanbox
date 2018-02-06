@@ -30,7 +30,7 @@ let actionMap = new Map();
   actionMap.set(WELCOME_INTENT, welcomeIntent);
   actionMap.set(NUMBER_INTENT, numberIntent);
   app.handleRequest(actionMap);
-  /*
+ 
   function responseHandler (app) {
     console.log("okok")
     // intent contains the name of the intent you defined in the Actions area of API.AI
@@ -49,7 +49,7 @@ let actionMap = new Map();
   // you can add the function name instead of an action map
   app.handleRequest(responseHandler);
  
-*/
+ 
 }
 
 restService.post('/', function (req, res) {

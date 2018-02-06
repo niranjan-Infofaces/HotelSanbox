@@ -3,6 +3,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const DialogflowApp = require('actions-on-google').DialogflowApp;
+
+
 const restService = express();
 
 restService.use(
@@ -16,6 +18,7 @@ const app = new DialogflowApp({request: req, response: res});
 const WELCOME_INTENT = 'input.welcome';  // the action name from the Dialogflow intent
 const NUMBER_INTENT = 'input.number';  // the action name from the Dialogflow intent
 const NUMBER_ARGUMENT = 'input.mynum'; // the action name from the Dialogflow intent
+const myAction ='SampleAction';
 console.log(req)
 function welcomeIntent (app) {
   app.ask('Welcome to number echo! Say a number.');
@@ -26,12 +29,18 @@ function numberIntent (app) {
   let number = app.getArgument(NUMBER_ARGUMENT);
   app.tell('You said 1 ' + number);
 }
+function sampleFunc(app)
+{
+  let _app = this.app;
+  app.tell(_app);
+  res.json({Data:_app});
+}
 let actionMap = new Map();
   actionMap.set(WELCOME_INTENT, welcomeIntent);
   actionMap.set(NUMBER_INTENT, numberIntent);
+  actionMap.set(myAction,sampleFunc);
   app.handleRequest(actionMap);
- 
-  function responseHandler (app) {
+   function responseHandler (app) {
     console.log("okok")
     // intent contains the name of the intent you defined in the Actions area of API.AI
     let intent = app.getIntent();
@@ -44,11 +53,19 @@ let actionMap = new Map();
         let number = app.getArgument(NUMBER_ARGUMENT);
         app.tell('You said 2' + number);
         break;
+
+      case  myAction:
+        app.ask('sample! ');
+        break;
+
+       default:
+        app.ask('Please enter correct input! ');
+        break;
+
     }
   }
   // you can add the function name instead of an action map
   app.handleRequest(responseHandler);
- 
  
 }
 

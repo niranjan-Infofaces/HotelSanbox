@@ -2,7 +2,6 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-require("http");
 const DialogflowApp = require('actions-on-google').DialogflowApp;
 
 const restService = express();

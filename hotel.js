@@ -24,7 +24,7 @@ function welcomeIntent (app) {
 
 function numberIntent (app) {
   let number = app.getArgument(NUMBER_ARGUMENT);
-  app.tell('You said ' + number);
+  app.tell('You said 1 ' + number);
 }
 let actionMap = new Map();
   actionMap.set(WELCOME_INTENT, welcomeIntent);
@@ -42,7 +42,7 @@ let actionMap = new Map();
 
       case NUMBER_INTENT:
         let number = assistant.getArgument(NUMBER_ARGUMENT);
-        assistant.tell('You said ' + number);
+        assistant.tell('You said 2' + number);
         break;
     }
   }

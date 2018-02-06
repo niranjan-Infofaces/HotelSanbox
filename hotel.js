@@ -32,18 +32,18 @@ let actionMap = new Map();
   actionMap.set(NUMBER_INTENT, numberIntent);
   app.handleRequest(actionMap);
   
-  function responseHandler (assistant) {
+  function responseHandler (app) {
     console.log("okok")
     // intent contains the name of the intent you defined in the Actions area of API.AI
-    let intent = assistant.getIntent();
+    let intent = app.getIntent();
     switch (intent) {
       case WELCOME_INTENT:
-        assistant.ask('Welcome! Say a number.');
+        app.ask('Welcome! Say a number.');
         break;
 
       case NUMBER_INTENT:
-        let number = assistant.getArgument(NUMBER_ARGUMENT);
-        assistant.tell('You said 2' + number);
+        let number = app.getArgument(NUMBER_ARGUMENT);
+        app.tell('You said 2' + number);
         break;
     }
   }

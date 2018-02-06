@@ -23,6 +23,7 @@ function welcomeIntent (app) {
 }
 
 function numberIntent (app) {
+   app.ask(app)
   let number = app.getArgument(NUMBER_ARGUMENT);
   app.tell('You said 1 ' + number);
 }

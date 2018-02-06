@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const DialogflowApp = require('actions-on-google').DialogflowApp;
 
+const DialogflowApp = require('actions-on-google').DialogflowApp;
+
 const restService = express();
 
 restService.use(
@@ -31,7 +33,7 @@ let actionMap = new Map();
   actionMap.set(WELCOME_INTENT, welcomeIntent);
   actionMap.set(NUMBER_INTENT, numberIntent);
   app.handleRequest(actionMap);
-  
+  /*
   function responseHandler (app) {
     console.log("okok")
     // intent contains the name of the intent you defined in the Actions area of API.AI
@@ -50,17 +52,14 @@ let actionMap = new Map();
   // you can add the function name instead of an action map
   app.handleRequest(responseHandler);
  
-
+*/
 }
 
-
-
-restService.use(bodyParser.json());
- 
 restService.post('/', function (req, res) {
  // console.log(req.body);
   sillyNameMaker(req, res);
 })
+
  
 restService.post("/echo", function(req, res) {
   //  var menu = "idli"   

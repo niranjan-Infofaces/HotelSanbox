@@ -73,6 +73,10 @@ let actionMap = new Map();
         app.ask('sample! ');
         break;
 
+        case  order:
+        app.ask('order! ');
+        break;
+        order
        default:
         app.ask('Please enter correct input! ');
         break;

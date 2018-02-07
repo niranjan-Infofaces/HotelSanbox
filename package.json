@@ -8,13 +8,13 @@
   },
   "author": "Sunil Syal",
   "dependencies": {
-<<<<<<< HEAD
+
     "actions-on-google": "^1.8.1",
     "body-parser": "^1.18.2",
     "dialogflow": "^0.1.0",
     "express": "^4.16.2"
   }
-=======
+
     "actions-on-google": "^1.8.2",
     "body-parser": "^1.18.2",
     "dialogflow": "^0.1.0",
@@ -32,5 +32,5 @@
     "url": "https://github.com/niranjan-Infofaces/GoogleHome_InfofacesSanbox/issues"
   },
   "homepage": "https://github.com/niranjan-Infofaces/GoogleHome_InfofacesSanbox#readme"
->>>>>>> d46db1982496e2718291a161f493fd30f2c4170c
+
 }

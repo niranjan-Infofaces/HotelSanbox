@@ -10,7 +10,9 @@
     "express": "^4.16.2"
   },
   "devDependencies": {},
+  
   "scripts": {
+    "start": "node hotel.js",
     "test": "node hotel.js"
   },
   "repository": {

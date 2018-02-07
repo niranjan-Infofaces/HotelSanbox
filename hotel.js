@@ -18,6 +18,8 @@ const app = new DialogflowApp({request: req, response: res});
 const WELCOME_INTENT = 'input.welcome';  // the action name from the Dialogflow intent
 const NUMBER_INTENT = 'input.number';  // the action name from the Dialogflow intent
 const NUMBER_ARGUMENT = 'input.mynum'; // the action name from the Dialogflow intent
+const Order="order";
+const OrderedMenu ="OrderedMenu";
 const myAction ='SampleAction';
 console.log(req)
 function welcomeIntent (app) {
@@ -35,9 +37,22 @@ function sampleFunc(app)
   app.tell(_app);
   res.json({Data:_app});
 }
+function tell_Order(app)
+{
+    app.tell("idli vada dosa");
+}
+function your_Order(app)
+{
+    // cont from here
+    let _app = new DialogflowApp({req,res})
+    let _order = app.getArgument('menu');
+    app.tell("You have ordered",_order)
+}
 let actionMap = new Map();
   actionMap.set(WELCOME_INTENT, welcomeIntent);
   actionMap.set(NUMBER_INTENT, numberIntent);
+  actionMap.set(order,tell_Order);
+  actionMap.set(OrderedMenu,your_Order);  
   actionMap.set(myAction,sampleFunc);
   app.handleRequest(actionMap);
    function responseHandler (app) {
